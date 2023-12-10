@@ -24,7 +24,7 @@ function returnMovies(url) {
 
             center.appendChild(image);
             div_card.appendChild(center);
-            div_card.appendChild(title);
+            div_card.appendChild(tistle);
             div_column.appendChild(div_card);
             div_row.appendChild(div_column);
   
@@ -32,4 +32,14 @@ function returnMovies(url) {
         });
     });
 }
-
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    main.innerHTML = '';
+  
+    const searchItem = search.value;
+  
+    if (searchItem) {
+      returnMovies(SEARCHAPI + searchItem);
+        search.value = "";
+    }
+  });

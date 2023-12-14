@@ -22,7 +22,7 @@ function returnMovies(url) {
             title.innerHTML = '${element.title}';
             image.src = IMGPATH + element.poster_path;
 
-            center.appendChild(image);
+            // center.appendChild(image);
             div_card.appendChild(center);
             div_card.appendChild(title);
             div_column.appendChild(div_card);

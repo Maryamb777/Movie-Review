@@ -17,14 +17,14 @@ function returnMovies(url) {
             const div_column = document.createElement('div');
             const image = document.createElement('img');
             const title = document.createElement('h3');
-            const center = document.createElement('center');
+            // const center = document.createElement('center');
 
             title.innerHTML = '${element.title}';
             image.src = IMGPATH + element.poster_path;
 
             center.appendChild(image);
             div_card.appendChild(center);
-            div_card.appendChild(tistle);
+            div_card.appendChild(title);
             div_column.appendChild(div_card);
             div_row.appendChild(div_column);
   

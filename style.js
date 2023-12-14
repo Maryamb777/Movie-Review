@@ -9,7 +9,7 @@ const search = document.getElementById('query');
 returnMovies(APILINK);
 function returnMovies(url) {
     fetch(url).then(res => res.json())
-    .then(function(data) {
+    .then(function(data){
         console.log(data.results);
         data.results.forEach(element => {
             const div_card = document.createElement('div');
@@ -22,13 +22,13 @@ function returnMovies(url) {
             div_column.setAttribute('class', 'column');
 
             const image = document.createElement('img');
-            div_column.setAttribute('class', 'thumbnail');
-            div_column.setAttribute('id', 'image');
+            image.setAttribute('class', 'thumbnail');
+            image.setAttribute('id', 'image');
         
             const title = document.createElement('h3');
             title.setAttribute('class', 'title');
             title.setAttribute('id', 'title');
-            
+
             //const center = document.createElement('center');
 
             title.innerHTML = '${element.title}';

@@ -7,6 +7,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+// specify api and version
 app.use("/api/v1/reviews", reviews)
 app.use("*", (req, res) => res.status(404).json({error: "not found"}))
 

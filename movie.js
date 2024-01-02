@@ -15,7 +15,7 @@ function returnReviews(url) {
     fetch(url + "movie/" + movieId).then(res => res.json())
     .then(function(data){
         console.log(data);
-        data.forEach(element => {
+        data.forEach(review => {
             const div_card = document.createElement('div');
             div_card.innerHTML = `
             <div class="row">
@@ -31,4 +31,22 @@ function returnReviews(url) {
             main.appendChild(div_row);
         });
     });
+}
+
+function editReview(id, review, user) {
+    console.log(review)
+    const element = document.getElementById(id);
+    console.log(element)
+    const reviewInputId = "review" + id
+    const userInputId = "user" + id
+    element.innerHTML = `
+            <p><strong>Review: </strong>
+                <input type="text" id="${reviewInputId}" value="${review}">
+                </p>
+            <p><strong>User: </strong> 
+                <input type="text" id="${userInputId}" value="${user}">
+                </p>
+            <p><a href='#' onclick="saveReview('${reviewInputId}', '${userInputId}', '${id}')">Save</a></p>
+
+    `
 }

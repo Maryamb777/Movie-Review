@@ -1,6 +1,11 @@
+const url = new URL(location.href);
+const movieId = url.searchParams.get('id');
+const movieTitle = url.searchParams.get('title');
+
 // here add the link to the page const APILINK = ' link here /api/v1/review/'; 
 
 const main = document.getElementById('section');
+const title = document.getElementById('title');
 
 returnMovies(APILINK);
 function returnMovies(url) {

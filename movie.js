@@ -50,3 +50,24 @@ function editReview(id, review, user) {
 
     `
 }
+
+function saveReview(reviewInputId,userInputId,id) {
+    const review = document.getElementById(reviewInputId).value;
+    const user = document.getElementById(userInputId).value;
+
+    // const element = document.getElementById(id);
+    fetch(APILINK + id, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"review": review, "user": user})
+    }).then(res => res.json())
+    .then(res => {
+        console.log(res)
+        location.reload();
+    });
+
+}
+

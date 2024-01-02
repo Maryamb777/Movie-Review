@@ -104,3 +104,13 @@ function saveReview(reviewInputId,userInputId,id=" ") {
 
 }
 }
+
+function deleteReview(id) {
+    fetch(APILINK + id, {
+        method: 'DELETE'
+    }).then(res => res.json())
+    .then(res => {
+        console.log(res)
+        location.reload();
+    });
+}

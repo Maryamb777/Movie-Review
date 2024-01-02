@@ -1,8 +1,6 @@
-const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6216d89b9381149db7dd70ed4122c87f'; 
+// here add the link to the page const APILINK = ' link here /api/v1/review/'; 
 
 const main = document.getElementById('section');
-const form = document.getElementById('form');
-const search = document.getElementById('query');
 
 returnMovies(APILINK);
 function returnMovies(url) {
@@ -42,14 +40,3 @@ function returnMovies(url) {
         });
     });
 }
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    main.innerHTML = '';
-  
-    const searchItem = search.value;
-  
-    if (searchItem) {
-      returnMovies(SEARCHAPI + searchItem);
-        search.value = "";
-    }
-  });

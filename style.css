@@ -11,7 +11,7 @@ body{
 h3 {
     color: white;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 20px; 
 }
 .topnav {
     overflow: hidden;
@@ -41,9 +41,9 @@ form {
 }
 
 input {
-    all: unset;
+    /* all: unset; */
     font: 15px Times New Roman;
-    color: #fff;
+    color: black;
     width: 100%;
     height: 100%;
     padding: 6px 9px;
